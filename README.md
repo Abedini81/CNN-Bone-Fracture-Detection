@@ -1,4 +1,4 @@
-# 🦴 Bone Fracture Binary Classification with CNN
+# 🦴 CNN-Bone-Fracture-Detection
 
 ## 📌 Project Overview
 This project tackles the binary classification of bone X-ray images into two categories:
