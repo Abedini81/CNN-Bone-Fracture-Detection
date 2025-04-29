@@ -12,7 +12,16 @@ I used Convolutional Neural Networks (CNNs) for image classification and apply b
 ## 📁 Dataset Structure
 Dataset (from Kaggle) is organized as:
 
-Bone_Fracture_Binary_Classification/ ├── train/ │ ├── fractured/ │ └── not fractured/ ├── test/ │ ├── fractured/ │ └── not fractured/ ├── val/ │ ├── fractured/ │ └── not fractured/
+Bone_Fracture_Binary_Classification/
+├── train/
+│   ├── fractured/
+│   └── not fractured/
+├── test/
+│   ├── fractured/
+│   └── not fractured/
+├── val/
+│   ├── fractured/
+│   └── not fractured/
 
 Each subdirectory contains class-specific images. Corrupted images were removed before training using a Python script.
 
