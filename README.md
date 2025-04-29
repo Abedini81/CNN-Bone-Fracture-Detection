@@ -111,10 +111,10 @@ Evaluated on validation set.
 Plots were used to compare model performance.
 
 🔍 Results:
-Baseline Model: Overfitted on training data.
+Baseline Model: High training and validation accuracy (~0.9) with low loss (~0.1), but slight fluctuations in validation loss indicate marginally less stable generalization.
 ![baseline_model](baseline_model.png)
 
-Augmented Model: Better validation accuracy and generalization.
+Augmented Model: Achieves high validation accuracy (~0.9) and low loss (~0.1) with more stable generalization, as seen in smoother validation loss trends compared to the baseline model.
 ![Augmented Model](AugmentedModel.png)
 
 🧠 Conclusions
