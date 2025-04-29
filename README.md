@@ -40,7 +40,7 @@ Required libraries:
 Install them via:
 
 - pip install tensorflow numpy matplotlib pandas pillow
-🧹 Removing Corrupted Images
+## 🧹 Removing Corrupted Images
 To remove incompatible or unreadable image files from train, test, and val, use the script below:
 
 `from pathlib import Path`
@@ -56,16 +56,16 @@ To remove incompatible or unreadable image files from train, test, and val, use 
         img_type = imghdr.what(filepath)
         if img_type is None or img_type not in img_type_accepted_by_tf:
             os.remove(filepath)`
-🖼️ Exploratory Data Analysis
+## 🖼️ Exploratory Data Analysis
 Used to count the number of samples per class and visualize random images:
 
 `def random_img(dirpath, target_class):
     # Load and display a random image from class
     ...`
-📷 Example Output:
+- 📷 Example Output:
 ![fractured](fractured.png)
 
-📊 Data Preprocessing
+## 📊 Data Preprocessing
 All pixel values rescaled to [0, 1] using:
 
 `ImageDataGenerator(rescale=1./255)`
@@ -74,8 +74,8 @@ Images resized to 224x224 and loaded with:
 `flow_from_directory(..., class_mode="binary", target_size=(224,224))`
 Batch size: 32
 
-📌 Baseline CNN Model
-Basic CNN model architecture:
+## 📌 Baseline CNN Model
+- Basic CNN model architecture:
 
 `Sequential([
     Conv2D(10, 3, activation='relu'),
@@ -87,14 +87,14 @@ Basic CNN model architecture:
     Flatten(),
     Dense(1, activation='sigmoid')
 ])`
-✅ Training
+- ✅ Training
 `baseline_model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 baseline_model.fit(...)`
-📉 Loss and Accuracy Plot
+- 📉 Loss and Accuracy Plot
 `pd.DataFrame(history.history).plot()`
 Shows training and validation accuracy/loss for 5 epochs.
 
-🔁 CNN with Data Augmentation
+- 🔁 CNN with Data Augmentation
 To improve generalization, we added data augmentation:
 
 `ImageDataGenerator(
@@ -106,27 +106,27 @@ To improve generalization, we added data augmentation:
 )`
 Model trained with same architecture on augmented data.
 
-✅ Training with Augmentation
+- ✅ Training with Augmentation
 `model.fit(train_data_ag, ...)`
-📉 Augmented Model Plot
+- 📉 Augmented Model Plot
 `pd.DataFrame(model.history).plot()`
 Shows improved performance after applying data augmentation.
 
-🧪 Evaluation
+## 🧪 Evaluation
 Both models trained for 5 epochs.
 
 Evaluated on validation set.
 
 Plots were used to compare model performance.
 
-🔍 Results:
+## 🔍 Results:
 Baseline Model: High training and validation accuracy (~0.9) with low loss (~0.1), but slight fluctuations in validation loss indicate marginally less stable generalization.
 ![baseline_model](baseline_model.png)
 
 Augmented Model: Achieves high validation accuracy (~0.9) and low loss (~0.1) with more stable generalization, as seen in smoother validation loss trends compared to the baseline model.
 ![Augmented Model](AugmentedModel.png)
 
-🧠 Conclusions
+## 🧠 Conclusions
 Developed a working CNN classifier for bone fracture detection.
 
 Boosted model performance using data augmentation.
@@ -135,7 +135,7 @@ Preprocessed data by removing corrupted files.
 
 Built reusable image classification pipeline.
 
-📂 Repository Structure
+## 📂 Repository Structure
 
 ├── cnn01.ipynb              # Main model notebook
 ├── corruptedTrain.py        # Script for cleaning training images
