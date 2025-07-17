@@ -1,6 +1,6 @@
 # 🦴 CNN-Bone-Fracture-Detection
 
-## 📌 Project Overview
+## Project Overview
 This project tackles the binary classification of bone X-ray images into two categories:  
 - **Fractured**  
 - **Not Fractured**  
@@ -9,7 +9,7 @@ I used Convolutional Neural Networks (CNNs) for image classification and applied
 
 ---
 
-## 📁 Dataset Structure
+## Dataset Structure
 The dataset (from Kaggle) is organized as:  
 
 ```
@@ -45,7 +45,7 @@ pip install tensorflow numpy matplotlib pandas pillow
 
 ---
 
-## 🧹 Removing Corrupted Images
+## Removing Corrupted Images
 To remove incompatible or unreadable image files from `train`, `test`, and `val`, use the script below:  
 
 ```python
@@ -66,7 +66,7 @@ for filepath in Path(data_dir).rglob("*"):
 
 ---
 
-## 🖼️ Exploratory Data Analysis
+## Exploratory Data Analysis
 Used to count the number of samples per class and visualize random images:  
 
 ```python
@@ -75,12 +75,12 @@ def random_img(dirpath, target_class):
     ...
 ```
 
-- 📷 Example Output:  
+- Example Output:  
   ![fractured](fractured.png)
 
 ---
 
-## 📊 Data Preprocessing
+## Data Preprocessing
 All pixel values rescaled to [0, 1] using:  
 
 ```python
@@ -97,7 +97,7 @@ Batch size: 32
 
 ---
 
-## 📌 Baseline CNN Model
+## Baseline CNN Model
 - Basic CNN model architecture:  
 
 ```python
@@ -113,14 +113,14 @@ Sequential([
 ])
 ```
 
-- ✅ Training:  
+- Training:  
 
 ```python
 baseline_model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 baseline_model.fit(...)
 ```
 
-- 📉 Loss and Accuracy Plot:  
+- Loss and Accuracy Plot:  
 
 ```python
 pd.DataFrame(history.history).plot()
@@ -130,7 +130,7 @@ Shows training and validation accuracy/loss for 5 epochs.
 
 ---
 
-## 🔁 CNN with Data Augmentation
+## CNN with Data Augmentation
 To improve generalization, we added data augmentation:  
 
 ```python
@@ -145,13 +145,13 @@ ImageDataGenerator(
 
 Model trained with the same architecture on augmented data.
 
-- ✅ Training with Augmentation:  
+- Training with Augmentation:  
 
 ```python
 model.fit(train_data_ag, ...)
 ```
 
-- 📉 Augmented Model Plot:  
+- Augmented Model Plot:  
 
 ```python
 pd.DataFrame(model.history).plot()
@@ -161,14 +161,14 @@ Shows improved performance after applying data augmentation.
 
 ---
 
-## 🧪 Evaluation
+## Evaluation
 Both models trained for 5 epochs.  
 Evaluated on the validation set.  
 Plots were used to compare model performance.
 
 ---
 
-## 🔍 Results
+## Results
 - **Baseline Model**: High training and validation accuracy (~0.9) with low loss (~0.1), but slight fluctuations in validation loss indicate marginally less stable generalization.  
   ![baseline_model](baseline_model.png)  
 
@@ -177,7 +177,7 @@ Plots were used to compare model performance.
 
 ---
 
-## 🧠 Conclusions
+## Conclusions
 - Developed a working CNN classifier for bone fracture detection.  
 - Boosted model performance using data augmentation.  
 - Preprocessed data by removing corrupted files.  
@@ -185,7 +185,7 @@ Plots were used to compare model performance.
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 ```
 ├── cnn01.ipynb              # Main model notebook
 ├── corruptedTrain.py        # Script for cleaning training images
