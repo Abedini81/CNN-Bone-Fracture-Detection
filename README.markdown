@@ -29,7 +29,7 @@ Each subdirectory contains class-specific images. Corrupted images were removed 
 
 ---
 
-## ⚙️ Dependencies
+## Dependencies
 Required libraries:  
 - `tensorflow`  
 - `numpy`  
