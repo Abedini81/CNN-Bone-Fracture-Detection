@@ -1,5 +1,10 @@
 # 🦴 CNN-Bone-Fracture-Detection
 
+## Project Presentation
+
+Check out a walkthrough of this project:  
+[Watch the video](https://drive.google.com/file/d/1Agg_RgWSHc39WayxEXA_nrLSJpOk1UAU/view?usp=sharing)
+
 ## Project Overview
 This project tackles the binary classification of bone X-ray images into two categories:  
 - **Fractured**  
